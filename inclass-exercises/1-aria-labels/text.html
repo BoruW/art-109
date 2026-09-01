@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native HTML & JS Word Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        li {
+            padding: 8px;
+            background: #f4f4f4;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Word Search</h2>
+    
+    <input type="text" id="wordInput" list="wordSuggestions" placeholder="Type to search words...">
+    
+    <datalist id="wordSuggestions"></datalist>
+
+    <ul id="resultsList"></ul>
+
+    <script>
+        // Your master list of words
+        const words = [
+            "Apple", "Banana", "Cherry", "Date", "Elderberry", 
+            "Fig", "Grape", "Honeydew", "Kiwi", "Lemon", 
+            "Mango", "Nectarine", "Orange", "Papaya", "Raspberry"
+        ];
+
+        const inputElement = document.getElementById('wordInput');
+        const datalistElement = document.getElementById('wordSuggestions');
+        const resultsListElement = document.getElementById('resultsList');
+
+        // Function to populate the datalist autocomplete options
+        function populateDatalist() {
+            datalistElement.innerHTML = '';
+            words.forEach(word => {
+                const option = document.createElement('option');
+                option.value = word;
+                datalistElement.appendChild(option);
+            });
+        }
+
+        // Function to display filtered results on the page
+        function displayResults(filterText) {
+            resultsListElement.innerHTML = ''; // Clear previous results
+
+            // If input is empty, don't show any list items
+            if (!filterText) return;
+
+            // Filter words that include the typed text (case-insensitive)
+            const filteredWords = words.filter(word => 
+                word.toLowerCase().includes(filterText.toLowerCase())
+            );
+
+            // Render matching words into the <ul>
+            if (filteredWords.length > 0) {
+                filteredWords.forEach(word => {
+                    const li = document.createElement('li');
+                    li.textContent = word;
+                    resultsListElement.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = "No matching words found.";
+                resultsListElement.appendChild(li);
+            }
+        }
+
+        // Initialize datalist on page load
+        populateDatalist();
+
+        // Listen for typing events in the input box
+        inputElement.addEventListener('input', (e) => {
+            displayResults(e.target.value);
+        });
+    </script>
+
+</body>
+</html>
