@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cat Image</title>
+</head>
+<body>
+    <main>
+        <h1>Responsive Cat Image</h1>
+        <img src="images/cat1.jpg"
+             style="display: block; width: 50%; max-width: 363px; height: auto; margin: 0 auto 2rem;"
+             alt="Cat 1 image">
+        <img src="images/cat-fallback.jpg"
+             style="display: block; width: 70%; max-width: 640px; height: auto; margin: 0 auto;"
+             srcset="images/cat-640.jpg 640w,
+                     images/cat-1280.jpg 1280w,
+                     images/cat-1920.jpg 1920w"
+             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1920px"
+             alt="A cat">
+    </main>
+</body>
+</html>
