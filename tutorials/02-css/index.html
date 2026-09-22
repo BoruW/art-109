@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Motion Test</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Make Things Move</h1>
+    </header>
+
+    <main class="motion-test">
+        <a class="button" href="#samples">Press Me</a>
+
+        <div class="loading-track" aria-label="Loading bar">
+            <div class="loading-bar"></div>
+            <span class="loading-text">Loading...</span>
+        </div>
+
+        <section class="samples" id="samples" aria-label="Original CSS motion samples">
+            <!-- New HTML element 1: transition applied to :hover. -->
+            <div class="hover-box" aria-label="Hover transition sample"></div>
+
+            <!-- Extra hover experiment. -->
+            <div class="cool-hover-box" aria-label="Shape-changing hover sample"></div>
+
+            <!-- New HTML element 2: CSS keyframe animation. -->
+            <div class="animation-box" aria-label="CSS animation sample"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,178 @@
+:root {
+    --background: #f4f0e6;
+    --ink: #252525;
+    --orange: #ff7848;
+    --green: #7ee081;
+    --blue: #69c9ff;
+    --purple: #9a7dff;
+    --yellow: #f5dc55;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--ink);
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    padding: 72px 24px 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    margin: 0;
+    transform: rotate(-3deg) skewX(-4deg);
+}
+
+.motion-test {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 50px 24px 100px;
+}
+
+.button {
+    background-color: var(--green);
+    border-radius: 10px;
+    color: var(--ink);
+    display: inline-block;
+    font-weight: bold;
+    padding: 15px 24px;
+    text-decoration: none;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.button:hover {
+    background-color: var(--yellow);
+    transform: scale(1.1);
+}
+
+.loading-track {
+    align-items: center;
+    background-color: #ded8c9;
+    border-radius: 20px;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 80vw;
+}
+
+.loading-bar {
+    animation: load 3s ease-out forwards;
+    background-color: var(--blue);
+    border-radius: inherit;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 25%;
+}
+
+.loading-text {
+    animation: hide-loading-text 3s forwards;
+    font-size: 0.85rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.samples {
+    align-items: center;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    min-height: 260px;
+    width: 100%;
+}
+
+.hover-box,
+.cool-hover-box,
+.animation-box {
+    border-radius: 20px;
+    height: 160px;
+    width: 160px;
+}
+
+/* New element 1: color change and rotation on hover. */
+.hover-box {
+    background-color: var(--orange);
+    transition: background-color 0.6s ease, transform 0.6s ease;
+}
+
+.hover-box:hover {
+    background-color: var(--purple);
+    transform: rotate(20deg);
+}
+
+/* Extra hover box: it changes color, shape, size, and rotation. */
+.cool-hover-box {
+    background-color: var(--yellow);
+    transition: background-color 0.8s ease, border-radius 0.8s ease, transform 0.8s ease;
+}
+
+.cool-hover-box:hover {
+    background-color: var(--blue);
+    border-radius: 50%;
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* New element 2: simple repeating CSS animation. */
+.animation-box {
+    animation: bounce 1.5s infinite alternate ease-in-out;
+    background-color: var(--purple);
+}
+
+@keyframes load {
+    from { width: 25%; }
+    to { width: 100%; }
+}
+
+@keyframes hide-loading-text {
+    0%, 85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes bounce {
+    from { transform: translateY(20px); }
+    to { transform: translateY(-20px); }
+}
+
+@media (max-width: 600px) {
+    .samples {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .hover-box,
+    .cool-hover-box,
+    .animation-box {
+        height: 130px;
+        width: 130px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
