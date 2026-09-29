@@ -10,61 +10,99 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a class="wordmark" href="#about">Boru Wang</a>
-            <nav aria-label="Primary navigation">
-                <a href="#about">About</a>
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+    <header class="site-header flex-container">
+        <h1><a class="name" href="#about">Boru Wang</a></h1>
+        <nav aria-label="Primary navigation">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+                <span aria-hidden="true">&#9776;</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="about-section" id="about">
-            <div class="container">
-                <p class="eyebrow">Digital media artist &middot; San Jos&eacute;, CA</p>
-                <p class="intro">I am a digital media artist pursuing my MFA in Digital Media Art at San Jos&eacute; State University. My practice spans kinetic installations, 3D printing, and creative programming. By combining tools like microcontrollers, CAD modeling, and custom scripts, I build physical and digital environments that explore the intersection of engineered materials and organic movement.</p>
-                <a class="button" href="#work">View selected work <span aria-hidden="true">&# 8599;</span></a>
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>I am a digital media artist pursuing my MFA in Digital Media Art at San Jos&eacute; State University. My practice spans kinetic installations, 3D printing, and creative programming. By combining tools like microcontrollers, CAD modeling, and custom scripts, I build physical and digital environments that explore the intersection of engineered materials and organic movement.</p>
+            <a href="#work">View selected work &#8599;</a>
+        </section>
+
+        <section id="work" class="portfolio-section">
+            <h2>My Work</h2>
+            <div class="flex-container-grid">
+                    <article class="portfolio-item flex-item-grid">
+                        <img src="images/Wish.png" alt="Wish Willow">
+                        <h3>Wish Willow</h3>
+                        <p>A kinetic sculpture study exploring how engineered materials can carry an organic, living feeling. Inspired by willow trees swaying in the wind and the cultural tradition of wish trees in northern China, the piece uses a manufactured tree form with an internal joint-and-tendon structure.</p>
+                    </article>
+                    <article class="portfolio-item flex-item-grid">
+                        <img src="images/Trian.png" alt="The Train">
+                        <h3>The Train</h3>
+                        <p>A real-time generative animation that runs across four synchronized screens using MPI multi-process architecture. Minimalist trains move across the monitors, emitting colorful smoke particles that linger and accumulate over time.</p>
+                    </article>
+                    <article class="portfolio-item flex-item-grid">
+                        <img src="images/Wave.png" alt="Waves of Love">
+                        <h3>Waves of Love</h3>
+                        <p>A computational fabrication project that translates sound waves into a layered, physical object. Using Ableton Live and Blender, specific audio frequencies from a personal recording were isolated to drive the generation of discrete geometric layers.</p>
+                    </article>
             </div>
         </section>
 
-        <section class="work-section" id="work">
-            <div class="container">
-                <p class="eyebrow">Selected work</p>
-                <h2>Experiments in form and behavior.</h2>
-                <div class="flex-container-grid">
-                    <article class="project-card flex-item-grid">
-                        <img src="images/Wish.png" alt="Wish Willow" class="project-img">
-                        <h3 class="project-title">Wish Willow</h3>
-                        <p class="project-desc">A kinetic sculpture study exploring how engineered materials can carry an organic, living feeling. Inspired by willow trees swaying in the wind and the cultural tradition of wish trees in northern China, the piece uses a manufactured tree form with an internal joint-and-tendon structure.</p>
-                    </article>
-                    <article class="project-card flex-item-grid">
-                        <img src="images/Trian.png" alt="The Train" class="project-img">
-                        <h3 class="project-title">The Train</h3>
-                        <p class="project-desc">A real-time generative animation that runs across four synchronized screens using MPI multi-process architecture. Minimalist trains move across the monitors, emitting colorful smoke particles that linger and accumulate over time.</p>
-                    </article>
-                    <article class="project-card flex-item-grid">
-                        <img src="images/Wave.png" alt="Waves of Love" class="project-img">
-                        <h3 class="project-title">Waves of Love</h3>
-                        <p class="project-desc">A computational fabrication project that translates sound waves into a layered, physical object. Using Ableton Live and Blender, specific audio frequencies from a personal recording were isolated to drive the generation of discrete geometric layers.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <footer class="flex-container">
-                    <div>
-                        <p class="eyebrow">Get in touch</p>
-                        <h2>Let&#8217;s make something move.</h2>
-                    </div>
-                    <a href="mailto:boru.wang@sjsu.edu" class="contact-link">boru.wang@sjsu.edu <span aria-hidden="true">&#8599;</span></a>
-                </footer>
-            </div>
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>Let&#8217;s make something move.</p>
+            <a href="mailto:boru.wang@sjsu.edu">boru.wang@sjsu.edu</a>
         </section>
     </main>
+
+    <footer class="flex-container">
+        <p>&copy; 2026 Boru Wang</p>
+        <!-- Replace these platform links with your personal profiles when ready. -->
+        <div class="social-links">
+            <img src="images/icon-logo-instagram.svg" alt="Instagram" width="48" height="48">
+            <img src="images/icon-logo-twitter.svg" alt="Twitter" width="48" height="48">
+            <img src="images/icon-logo-youtube.svg" alt="YouTube" width="48" height="48">
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        function closeMenu() {
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'Open navigation');
+            navLinks.classList.remove('is-open');
+        }
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isOpen));
+            menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+            navLinks.classList.toggle('is-open', !isOpen);
+        });
+
+        navLinks.addEventListener('click', (event) => {
+            if (event.target.closest('a')) closeMenu();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+                closeMenu();
+                menuButton.focus();
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('nav')) closeMenu();
+        });
+
+        window.matchMedia('(max-width: 750px)').addEventListener('change', closeMenu);
+        document.documentElement.classList.add('js');
+    </script>
 </body>
 </html>
