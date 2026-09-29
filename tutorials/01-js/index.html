@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="header" aria-live="polite">SPAM!</h1>
+        <button id="change-header-button" type="button">Change header <span aria-hidden="true">&#129473;</span></button>
+    </header>
+
+    <main>
+        <div>
+            <button id="change-theme" type="button">Switch to Dark Theme</button>
+        </div>
+
+        <section aria-label="Click to reveal artwork">
+            <img id="img1" src="images/Wish.png" alt="Wish Willow. Click to reveal The Train." role="button" tabindex="0" aria-controls="img2" aria-expanded="false">
+            <img id="img2" src="images/Trian.png" alt="The Train. Click to reveal Waves of Love." class="hidden" role="button" tabindex="0" aria-controls="img3" aria-expanded="false">
+            <img id="img3" src="images/Wave.png" alt="Waves of Love. Click to hide images 2 and 3." class="hidden" role="button" tabindex="0" aria-controls="img2">
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
