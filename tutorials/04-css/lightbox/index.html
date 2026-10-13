@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery | Boru Wang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/baguetteBox.css">
+    <link rel="stylesheet" href="../css/lightbox.css">
+</head>
+<body>
+    <header class="site-header flex-container">
+        <h1><a class="name" href="index.html">Boru Wang</a></h1>
+        <nav aria-label="Primary navigation">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+                <span aria-hidden="true">&#9776;</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>I am a digital media artist pursuing my MFA in Digital Media Art at San Jos&eacute; State University. My practice spans kinetic installations, 3D printing, and creative programming. By combining tools like microcontrollers, CAD modeling, and custom scripts, I build physical and digital environments that explore the intersection of engineered materials and organic movement.</p>
+            <a href="#work">View selected work &#8599;</a>
+        </section>
+
+        <section id="work" class="portfolio-section">
+            <h2>My Work</h2>
+            <p class="gallery-note">Select an image to enlarge it, or <a href="../index.html#work">explore the project pages</a>.</p>
+            <div class="flex-container-grid">
+                    <article class="portfolio-item flex-item-grid">
+                        <a href="../images/Wish.png" data-caption="Wish Willow"><img src="../images/Wish.png" alt="Wish Willow"></a>
+                        <h3>Wish Willow</h3>
+                        <p>A kinetic sculpture study exploring how engineered materials can carry an organic, living feeling. Inspired by willow trees swaying in the wind and the cultural tradition of wish trees in northern China, the piece uses a manufactured tree form with an internal joint-and-tendon structure.</p>
+                    </article>
+                    <article class="portfolio-item flex-item-grid">
+                        <a href="../images/Trian.png" data-caption="The Train"><img src="../images/Trian.png" alt="The Train"></a>
+                        <h3>The Train</h3>
+                        <p>A real-time generative animation that runs across four synchronized screens using MPI multi-process architecture. Minimalist trains move across the monitors, emitting colorful smoke particles that linger and accumulate over time.</p>
+                    </article>
+                    <article class="portfolio-item flex-item-grid">
+                        <a href="../images/Wave.png" data-caption="Waves of Love"><img src="../images/Wave.png" alt="Waves of Love"></a>
+                        <h3>Waves of Love</h3>
+                        <p>A computational fabrication project that translates sound waves into a layered, physical object. Using Ableton Live and Blender, specific audio frequencies from a personal recording were isolated to drive the generation of discrete geometric layers.</p>
+                    </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>Let&#8217;s make something move.</p>
+            <a href="mailto:boru.wang@sjsu.edu">boru.wang@sjsu.edu</a>
+        </section>
+    </main>
+
+    <footer class="flex-container">
+        <p>&copy; 2026 Boru Wang</p>
+        <div class="social-links">
+            <img src="../images/icon-logo-instagram.svg" alt="Instagram" width="48" height="48">
+            <img src="../images/icon-logo-twitter.svg" alt="Twitter" width="48" height="48">
+            <img src="../images/icon-logo-youtube.svg" alt="YouTube" width="48" height="48">
+        </div>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/baguetteBox.js"></script>
+    <script>
+        baguetteBox.run('.flex-container-grid', {
+            captions: true,
+            buttons: true,
+            noScrollbars: true,
+            animation: false,
+            overlayBackgroundColor: 'rgba(16, 32, 31, 0.96)'
+        });
+    </script>
+</body>
+</html>
